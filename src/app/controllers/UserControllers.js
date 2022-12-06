@@ -4,7 +4,7 @@ const e = require('express')
 
 class UserControllers {
    // [POST]: /users/:id
-   getUser = async function (req, res, next) {
+   getUser = async function (req, res) {
       console.log('getUser')
       const id = req.params.id
 
@@ -22,7 +22,7 @@ class UserControllers {
    }
 
    // [PUT]: /users/:id
-   updateUser = async function (req, res, next) {
+   updateUser = async function (req, res) {
       console.log('updateUser')
       const id = req.params.id
       const { curUserId, curUserAdminStatus, password } = req.body
@@ -46,7 +46,7 @@ class UserControllers {
    }
 
    // [DELETE]: /users/:id
-   deleteUser = async function (req, res, next) {
+   deleteUser = async function (req, res) {
       console.log('deleteUser')
       const { id } = req.params
       const { curUserId, currenUserAdminStatus } = req.body
@@ -64,7 +64,7 @@ class UserControllers {
    }
 
    // [PATCH]: /users/follow/:id
-   followUser = async function (req, res, next) {
+   followUser = async function (req, res) {
       console.log('followUser')
       const { id } = req.params
       const { curUserId } = req.body
@@ -89,7 +89,7 @@ class UserControllers {
    }
 
    // [PATCH]: /users/unfollow/:id
-   unFollowUser = async function (req, res, next) {
+   unFollowUser = async function (req, res) {
       console.log('unFollowUser')
       const { id } = req.params
       const { curUserId } = req.body

@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 
 class AuthController {
    // [POST]: /auth/login
-   loginUser = async function (req, res, next) {
+   loginUser = async function (req, res) {
       console.log('loginUser')
       const { username, password } = req.body
 
@@ -22,7 +22,7 @@ class AuthController {
    }
 
    // [POST]: /auth/register
-   registerUser = async function (req, res, next) {
+   registerUser = async function (req, res) {
       console.log('registerUser')
       const { username, password, firstName, lastName } = req.body
 
