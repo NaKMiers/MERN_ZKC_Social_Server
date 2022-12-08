@@ -1,5 +1,6 @@
 const dotenv = require('dotenv')
 const express = require('express')
+const path = require('path')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const routes = require('./routes')
@@ -11,6 +12,9 @@ const PORT = process.env.PORT
 
 // express instance
 const app = express()
+
+// public folder
+app.use(express.static(path.resolve(__dirname, '..', 'public')))
 
 // apply middlewares
 app.use(bodyParser.urlencoded({ extended: true }))

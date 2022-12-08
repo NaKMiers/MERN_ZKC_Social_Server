@@ -25,7 +25,7 @@ class PostController {
          const newPost = new PostModel(req.body)
          await newPost.save()
 
-         res.status(200).json('Post created')
+         res.status(200).json(newPost)
       } catch (err) {
          res.status(500).json({ message: err.message })
       }
@@ -117,9 +117,11 @@ class PostController {
                },
             },
          ])
-         res.status(200)
-            .json(curUserPosts.concat(...followingPosts[0].followingPosts))
-            .sort((a, b) => b.createdAt - a.createdAt)
+         res.status(200).json(
+            curUserPosts
+               .concat(...followingPosts[0].followingPosts)
+               .sort((a, b) => b.createdAt - a.createdAt)
+         )
       } catch (err) {
          res.status(500).json({ message: err.message })
       }
