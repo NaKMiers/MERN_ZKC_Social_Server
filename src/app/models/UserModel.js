@@ -12,10 +12,11 @@ const UserSchema = Schema(
       coverImg: String,
       about: String,
       liveIn: String,
+      country: String,
       workAt: String,
       relationship: String,
       followers: [],
-      following: [],
+      followings: [],
    },
    { timestamps: true }
 )
