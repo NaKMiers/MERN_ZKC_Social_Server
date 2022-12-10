@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage }).single('file')
 
 class UploadController {
-   // [POST]: /upload/
+   // [POST]: /uploads/
    uploadImage = async function (req, res) {
       console.log('uploadImage')
 
